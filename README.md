@@ -28,6 +28,7 @@ Conversion from HDR (matrix=2020, primaries=2020) to full HD SDR (matrix=709, pr
 ## formulas used
 
 - Reinhard extended 
+
 It maps the max HDR value to 1
 
 Y = (((x / (max_value * max_value)) + 1) * x ) /  ( x + 1)
