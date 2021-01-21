@@ -94,7 +94,7 @@ def bt2390_ictcp(clip="",source_peak=None,target_nits="" ) :
     b=core.std.ShufflePlanes(cs, planes=[2], colorfamily=vs.GRAY)
     max = core.std.Expr(clips=[r,g,b], expr="x y max z max") 
     min = core.std.Expr(clips=[r,g,b], expr="x y min z min")
-    sat = core.std.Expr(clips=[max,min], expr="x y -")        
+    sat = core.std.Expr(clips=[r,g,b], expr="x x * y y * + z z * + x y + z + /")       
     l = core.std.Expr(clips=[r,g,b], expr="0.2627 x * 0.6780 y * + 0.0593 z * +") 
     l=  core.std.ShufflePlanes(clips=[l,l,l], planes=[0,0,0], colorfamily=vs.RGB)      
 
